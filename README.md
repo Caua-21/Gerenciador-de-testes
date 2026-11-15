@@ -170,4 +170,4 @@ dominios.h  ◄──  entidades.h     (usados por todas as camadas)
 
 ## Autor
 
-Seu nome - [seu-usuario](https://github.com/seu-usuario)
+Cauã Lima - [Caua-21](https://github.com/Caua-21)
