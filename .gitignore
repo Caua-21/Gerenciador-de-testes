@@ -1,0 +1,19 @@
+# Artefatos de compilação
+bin/
+obj/
+*.exe
+*.o
+*.out
+
+# Arquivos locais do Code::Blocks (gerados automaticamente)
+*.layout
+*.depend
+
+# Arquivos locais do VS Code (mantém só o tasks.json)
+.vscode/*
+!.vscode/tasks.json
+
+# Sistema operacional
+Thumbs.db
+desktop.ini
+.DS_Store

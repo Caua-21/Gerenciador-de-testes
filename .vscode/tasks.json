@@ -1,0 +1,30 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "build",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"-g",
+				"-o",
+				"bin/Debug/pkl.exe",
+				"conteiners.cpp",
+				"controladorasapresentacao.cpp",
+				"controladorasservico.cpp",
+				"dominios.cpp",
+				"main.cpp",
+				"stubs.cpp"
+			],
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"problemMatcher": [
+				"$gcc"
+			],
+			"presentation": {
+				"reveal": "silent"
+			}
+		}
+	]
+}
