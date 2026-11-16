@@ -5,9 +5,9 @@
 #include<unordered_set>
 using namespace std;
 
-///este metodo verifica se o dado fornecido é válida.
-///Se o dado for válido inicializa o objeto.
-///Se o dado for inválido lança exeção.
+///este metodo verifica se o dado fornecido ï¿½ vï¿½lida.
+///Se o dado for vï¿½lido inicializa o objeto.
+///Se o dado for invï¿½lido lanï¿½a exeï¿½ï¿½o.
 ///
 ///@param dado
 ///
@@ -18,7 +18,7 @@ void Dominios::setdado(string dado) {
     if (validar(dado)) {
         this->dado = dado;
     } else {
-        throw invalid_argument("Valor inválido para o domínio");
+        throw invalid_argument("Valor invï¿½lido para o domï¿½nio");
     }
 }
 
@@ -31,9 +31,9 @@ int Data::diasnomes() const {
     return dias[mes - 1];
 }
 
-///este metodo verifica se a data fornecido é válido.
-///Se a data for válida retorna verdadeiro.
-///Se a data for inválida retorna falso.
+///este metodo verifica se a data fornecido ï¿½ vï¿½lido.
+///Se a data for vï¿½lida retorna verdadeiro.
+///Se a data for invï¿½lida retorna falso.
 ///
 ///@return true.
 ///
@@ -62,7 +62,7 @@ bool Data::validar(string dado) {
         mes = 2;
     } else if (mes_str == "MAR" || mes_str == "mar") {
         mes = 3;
-    } else if (mes_str == "ABRIL" || mes_str == "abril") {
+    } else if (mes_str == "ABR" || mes_str == "abr") {
         mes = 4;
     } else if (mes_str == "MAI" || mes_str == "mai") {
         mes = 5;
@@ -90,6 +90,8 @@ bool Data::validar(string dado) {
         return false;
     }
 
+    this->mes = mes;
+    this->ano = ano;
     int dias_no_mes = diasnomes();
 
     if (dia < 1 || dia > dias_no_mes) {
@@ -99,9 +101,9 @@ bool Data::validar(string dado) {
     return true;
 }
 
-///este metodo verifica se o resultado fornecido é válido.
-///Se o resultado for válido retorna verdadeiro.
-///Se o resultado for inválido retorna falso.
+///este metodo verifica se o resultado fornecido ï¿½ vï¿½lido.
+///Se o resultado for vï¿½lido retorna verdadeiro.
+///Se o resultado for invï¿½lido retorna falso.
 ///
 ///@return true.
 ///
@@ -124,9 +126,9 @@ Resultado& Resultado::operator=(const Resultado& r) {
 Resultado::Resultado(const Resultado& r) : Dominios(r), str1(r.str1), str2(r.str2) {}
 
 
-///este metodo verifica se o formato fornecido é válido.
-///Se o formato for válido retorna verdadeiro.
-///Se o formato for inválido retorna falso.
+///este metodo verifica se o formato fornecido ï¿½ vï¿½lido.
+///Se o formato for vï¿½lido retorna verdadeiro.
+///Se o formato for invï¿½lido retorna falso.
 ///
 ///@return true.
 ///
@@ -140,9 +142,9 @@ bool Formato::validar(string dado) {
     }
 }
 
-///este metodo verifica se a matricula fornecido é válid.
-///Se a matricula for válida retorna verdadeiro.
-///Se a matricula for inválida retorna falso.
+///este metodo verifica se a matricula fornecido ï¿½ vï¿½lid.
+///Se a matricula for vï¿½lida retorna verdadeiro.
+///Se a matricula for invï¿½lida retorna falso.
 ///
 ///@return true.
 ///
@@ -170,7 +172,7 @@ bool Matricula::validar(string dado) {
             throw invalid_argument("Digite apenas digitos numericos");
         }
         }
-        int digito = 10 - (soma % 10);
+        int digito = (10 - (soma % 10)) % 10;
 
         if(digito == dado.back()-'0'){
             return true;
@@ -180,9 +182,9 @@ bool Matricula::validar(string dado) {
         }
 }
 
-///este metodo verifica se o codigo fornecido é válido.
-///Se o codigo for válido retorna verdadeiro.
-///Se o codigo for inválido retorna falso.
+///este metodo verifica se o codigo fornecido ï¿½ vï¿½lido.
+///Se o codigo for vï¿½lido retorna verdadeiro.
+///Se o codigo for invï¿½lido retorna falso.
 ///
 ///@return true.
 ///
@@ -223,9 +225,9 @@ bool Codigo::validar(string dado){
     return true;
 }
 
-///este metodo verifica se a senha fornecida é válido.
-///Se a senha for válida retorna verdadeiro.
-///Se a senha for inválida retorna falso.
+///este metodo verifica se a senha fornecida ï¿½ vï¿½lido.
+///Se a senha for vï¿½lida retorna verdadeiro.
+///Se a senha for invï¿½lida retorna falso.
 ///
 ///@return true.
 ///
@@ -249,9 +251,9 @@ bool Senha::validar(string dado) {
     return true;
 }
 
-///este metodo verifica se o telefone fornecido é válido.
-///Se o telefone for válido retorna verdadeiro.
-///Se o telefone for inválido retorna falso.
+///este metodo verifica se o telefone fornecido ï¿½ vï¿½lido.
+///Se o telefone for vï¿½lido retorna verdadeiro.
+///Se o telefone for invï¿½lido retorna falso.
 ///
 ///@return true.
 ///
@@ -282,9 +284,9 @@ bool Telefone::validar(string dado){
     return true;
 }
 
-///este metodo verifica se o data fornecido é válido.
-///Se o texto for válido retorna verdadeiro.
-///Se o texto for inválido retorna falso.
+///este metodo verifica se o data fornecido ï¿½ vï¿½lido.
+///Se o texto for vï¿½lido retorna verdadeiro.
+///Se o texto for invï¿½lido retorna falso.
 ///
 ///@return true.
 ///
@@ -305,7 +307,7 @@ bool Texto::validar(string dado){
             }
             else{
                 if(isdigit(dado[i])){
-                    if(dado[i]>='0'&&dado[i]>='9'){
+                    if(dado[i]>='0'&&dado[i]<='9'){
                         continue;
                     }
                     return false;
